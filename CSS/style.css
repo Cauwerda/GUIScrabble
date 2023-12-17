@@ -1,0 +1,53 @@
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 20px; /* Spacing between board and rack */
+}
+
+#scrabbleBoard {
+    background-size: 800px 800px; /* Adjust to match the size of your board image */
+    background-repeat: no-repeat;
+    background-position: 10px 20px; 
+
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    height: 800px; /* Adjust based on your image */
+    width: 800px; /* Adjust based on your image */
+
+    padding-top: 100px; /* Adjust to align the top of the grid */
+    padding-left: 150px; /* Adjust to align the left side of the grid */
+    padding-right: 20px; /* Adjust if the board extends beyond the right side */
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0; /* Adjust the gap if needed */
+}
+
+.boardSquare {
+    width: 800/15px;
+    height: 800/15px;
+    box-sizing: border-box;
+    border: 1px solid; /* Adjust or remove border as needed */
+}
+
+#tileRack {
+    background-image: url('../Images/scrabble-tile-holder-406774_640.png'); /* Update with the correct path */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    height: 100px; /* Adjust based on your image */
+    width: 600px; /* Adjust based on your image */
+}
+
+.tile {
+    width: 47px; /* Adjust based on your image */
+    height: 47px; /* Adjust based on your image */
+    margin: 2px;
+    /* Assuming you have individual tile images */
+    background-image: url('../Images/Scrabble_Tile_A.jpg'); /* This is a placeholder; you'll set it dynamically */
+    background-size: cover;
+    text-align: center;
+    line-height: 40px; /* Adjust based on your image */
+}
