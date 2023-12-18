@@ -26,8 +26,7 @@ Features:
 		
 	Gameplay Mechanics:
 		Fully working: Ensures that the first tile is placed in the center.
-		Partially working: Establishes the direction of the word being placed after the first tile:
-			When placing the first tile of your second word it may decide you're going in a different direction than you wanted
+		Partially working: You need to place two tiles on your second word to establish a direction before you can place a letter on the otherside of the original word
 		Fully working: Prevents placement of tiles in invalid positions.
 		
 	Continuous Tile Addition:
