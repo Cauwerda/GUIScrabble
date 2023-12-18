@@ -234,9 +234,6 @@ $(function() {
 				
 		} else if (currentPlacedTiles.length === 0) {
 				isValidPlacement = isAdjacentToPlacedTile(row, col);
-				if(isValidPlacement){
-					addContinuousTiles(row, col, wordDirection);
-				}
 		} else {
 			isValidPlacement = isAdjacentToPlacedTile(row, col) && followsDirection(row, col, wordDirection) && !isNeighboringOtherTiles(row, col, currentPlacedTiles.concat(scoretiles));
 		}
