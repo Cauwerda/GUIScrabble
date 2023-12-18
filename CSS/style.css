@@ -1,53 +1,143 @@
+/* Main game container, centers content and aligns items to the top with spacing */
 #gameContainer {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns items to the top */
-    gap: 20px; /* Spacing between board and rack */
+    align-items: flex-start;
+    gap: 20px;
+    margin: 0 auto;
 }
 
+/* Styles for the Scrabble board with a grid layout, responsive width and height, and set maximum dimensions */
 #scrabbleBoard {
-    background-size: 800px 800px; /* Adjust to match the size of your board image */
-    background-repeat: no-repeat;
-    background-position: 10px 20px; 
-
     display: grid;
     grid-template-columns: repeat(15, 1fr);
     grid-template-rows: repeat(15, 1fr);
-    height: 800px; /* Adjust based on your image */
-    width: 800px; /* Adjust based on your image */
 
-    padding-top: 100px; /* Adjust to align the top of the grid */
-    padding-left: 150px; /* Adjust to align the left side of the grid */
-    padding-right: 20px; /* Adjust if the board extends beyond the right side */
-    margin-left: auto;
-    margin-right: auto;
-    gap: 0; /* Adjust the gap if needed */
+    width: 100vw;
+    height: 100vw;
+
+    min-width: calc(60px * 15);
+    min-height: calc(60px * 15);
+    margin: 0 auto;
+    gap: 0;
 }
 
+/* Defines the appearance and borders for individual board squares */
 .boardSquare {
-    width: 800/15px;
-    height: 800/15px;
+	position: relative;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
-    border: 1px solid; /* Adjust or remove border as needed */
+    border: 1px solid #ddd;
 }
 
+/* Styles for the tile rack with a background image, centered content, responsive width, and set minimum dimensions */
 #tileRack {
-    background-image: url('../Images/scrabble-tile-holder-406774_640.png'); /* Update with the correct path */
-    background-size: cover;
+	background-image: url('../Images/scrabble-tile-holder-406774_640.png'); 
     display: flex;
     justify-content: center;
     margin: 20px auto;
-    height: 100px; /* Adjust based on your image */
-    width: 600px; /* Adjust based on your image */
+    width: 80%;
+    min-width: 300px;
+    height: 15vh;
+    min-height: 50px;
 }
 
+/* Responsive tile size with minimum dimensions and background styling */
 .tile {
-    width: 47px; /* Adjust based on your image */
-    height: 47px; /* Adjust based on your image */
+	position: absolute;
+    width: calc(10vw / 15);
+    height: calc(10vw / 15);
+    min-width: 30px;
+    min-height: 30px;
     margin: 2px;
-    /* Assuming you have individual tile images */
-    background-image: url('../Images/Scrabble_Tile_A.jpg'); /* This is a placeholder; you'll set it dynamically */
     background-size: cover;
     text-align: center;
-    line-height: 40px; /* Adjust based on your image */
+    line-height: calc(10vw / 15);
+	z-index: 2;
+}
+
+/* Styles for double and triple word and letter squares with color coding */
+.doubleWord { background-color: #FFCCCC; }
+.tripleWord { background-color: #FF9999; }
+.doubleLetter { background-color: #CCCCFF; }
+.tripleLetter { background-color: #9999FF; }
+
+/* Text styling for special score indicators within board squares */
+.specialScoreText {
+	position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10%;
+    left: 0;
+    font-size: 0.8em;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Styling for the button container, arranging buttons in a column and centering them */
+#buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    margin: auto;
+    width: fit-content;
+}
+
+/* Generic button styling with hover effects for interactivity */
+button {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover { background-color: #e2e6ea; }
+
+/* Input field styling with fixed width and padding */
+input[type="text"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+}
+
+/* Distinguishing read-only input fields with a different background color */
+input[type="text"][readonly] { background-color: #f8f9fa; }
+
+/* Specific styles for the Enter Word and Restart buttons with distinct colors */
+#submitword {
+    background-color: #007bff;
+    color: white;
+}
+#submitword:hover { background-color: #0056b3; }
+#restartGame {
+    background-color: #28a745;
+    color: white;
+}
+#restartGame:hover { background-color: #1e7e34; }
+
+/* Adjustments for large screens with fixed dimensions for board and tiles */
+@media (min-width: 1200px) {
+    #scrabbleBoard {
+        max-width: 800px;
+        max-height: 800px;
+        width: 800px;
+        height: 800px;
+    }
+    .tile {
+        width: 53px;
+        height: 53px;
+        line-height: 53px;
+    }
+    #tileRack {
+        width: 600px;
+        height: 100px;
+    }
 }
