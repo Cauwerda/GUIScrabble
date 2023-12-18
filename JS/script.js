@@ -3,7 +3,7 @@
 
 $(function() {
     const boardSize = 15; // Size of the Scrabble board
-    const tileImageBasePath = 'images/Scrabble_Tile_'; // Path to tile images
+    const tileImageBasePath = './Images/Scrabble_Tile_'; // Path to tile images
     let placedTiles = []; // Tiles already placed on the board
     let currentPlacedTiles = []; // Tiles currently being placed
     let wordDirection = null; // Direction of current word ('horizontal', 'vertical', or null)
