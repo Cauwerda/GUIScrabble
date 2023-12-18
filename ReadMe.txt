@@ -46,3 +46,7 @@ Features:
 		
 	Game Restart:
 		Fully working: Functionality to restart the game is included
+		
+		
+Link: https://cauwerda.github.io/GUIScrabble/
+Repo: https://github.com/Cauwerda/GUIScrabble

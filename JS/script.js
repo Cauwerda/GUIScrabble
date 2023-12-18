@@ -1,6 +1,12 @@
-
-
-
+/*
+File: script.js
+GUI Assignment: HW5
+Charlie Auwerda
+charles_auwerda@student.uml.edu
+Copyright (c) 2023 by Charlie Auwerda. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CA on December 17 2023
+*/
 $(function() {
     const boardSize = 15; // Size of the Scrabble board
     const tileImageBasePath = './Images/Scrabble_Tile_'; // Path to tile images
